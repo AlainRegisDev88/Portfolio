@@ -1,3 +1,30 @@
+    /*
+        portfolio.css section map
+
+        1.  Base and variables
+        2.  Neural grid background
+        3.  Sidebar
+        4.  Main layout
+        5.  Sections
+        6.  Hero
+        7.  Section headers
+        8.  About
+        9.  Timeline
+        10. Skills
+        11. Projects
+        12. Experience
+        13. Education
+        14. Certifications
+        15. Books
+        16. Hobbies
+        17. Achievements
+        18. Blog
+        19. Contact
+        20. Scrollbar
+        21. Mobile
+        22. Reveal animation
+    */
+/* 
     *,
     *::before,
     *::after {
@@ -50,10 +77,10 @@
         z-index: 0;
         pointer-events: none;
         opacity: 0.35
-    }
+    } */
 
     /* SIDEBAR */
-    .sidebar {
+    /* .sidebar {
         position: fixed;
         left: 0;
         top: 0;
@@ -142,9 +169,9 @@
         font-size: 12px;
         color: var(--text3);
         font-family: var(--font-mono)
-    }
+    } */
 
-    /* MAIN */
+    MAIN
     .main {
         margin-left: var(--sidebar);
         flex: 1;

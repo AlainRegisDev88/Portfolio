@@ -1,0 +1,92 @@
+
+    /* SIDEBAR */
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: var(--sidebar);
+        background: rgba(0, 0, 0, 0.92);
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+        backdrop-filter: blur(20px);
+        transition: transform 0.4s var(--ease);
+    }
+
+    .sidebar-logo {
+        padding: 32px 24px 24px;
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--text);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-logo span {
+        color: var(--text2);
+        font-weight: 300
+    }
+
+    .sidebar-nav {
+        flex: 1;
+        padding: 16px 0;
+        overflow-y: auto
+    }
+
+    .nav-section {
+        padding: 8px 24px 4px;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text3);
+        font-family: var(--font-mono)
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 24px;
+        cursor: pointer;
+        font-size: 13px;
+        color: var(--text2);
+        font-family: var(--font-body);
+        transition: color 0.2s, background 0.2s;
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        white-space: nowrap;
+    }
+
+    .nav-item:hover {
+        color: var(--text);
+        background: var(--glow)
+    }
+
+    .nav-item.active {
+        color: var(--text);
+        border-left-color: var(--text);
+        background: var(--glow)
+    }
+
+    .nav-item svg {
+        width: 14px;
+        height: 14px;
+        opacity: 0.6;
+        flex-shrink: 0
+    }
+
+    .nav-item.active svg {
+        opacity: 1
+    }
+
+    .sidebar-footer {
+        padding: 20px 24px;
+        border-top: 1px solid var(--border);
+        font-size: 12px;
+        color: var(--text3);
+        font-family: var(--font-mono)
+    }
