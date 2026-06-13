@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regis — AI Engineer & CS Student</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+  <canvas id="neural-canvas"></canvas>
+
+  <button id="mobile-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <line x1="3" y1="7" x2="21" y2="7" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="17" x2="21" y2="17" />
+    </svg>
+  </button>
+  <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">Regis<br><span>CS Student · AI Engineer</span></div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">Main</div>
+      <a class="nav-item active" href="#home" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+        </svg>Home
+      </a>
+      <a class="nav-item" href="#about" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+        </svg>About
+      </a>
+      <a class="nav-item" href="#skills" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>Skills
+      </a>
+      <a class="nav-item" href="#projects" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="3" width="20" height="14" rx="2" />
+          <path d="M8 21h8M12 17v4" />
+        </svg>Projects
+      </a>
+      <div class="nav-section">Career</div>
+      <a class="nav-item" href="#experience" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="7" width="20" height="14" rx="2" />
+          <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+        </svg>Experience
+      </a>
+      <a class="nav-item" href="#education" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M22 10l-10-7L2 10l10 7 10-7zM2 10v7" />
+          <path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5" />
+        </svg>Education
+      </a>
+      <a class="nav-item" href="#certifications" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="8" r="6" />
+          <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+        </svg>Certs
+      </a>
+      <div class="nav-section">Personal</div>
+      <a class="nav-item" href="#books" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+        </svg>Books
+      </a>
+      <a class="nav-item" href="#hobbies" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path
+            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+        </svg>Hobbies
+      </a>
+      <a class="nav-item" href="#achievements" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>Achievements
+      </a>
+      <a class="nav-item" href="#blog" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+          <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+        </svg>Blog
+      </a>
+      <a class="nav-item" href="#contact" onclick="closeSidebar()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>Contact
+      </a>
+    </nav>
+    <div class="sidebar-footer">Ashesi University · 2024–2028</div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- HOME -->
+    <section class="section" id="home">
+      <div class="hero-eyebrow">Computer Science Student</div>
+      <h1 class="hero-title">Building<br>Intelligence<br><em>for a Better Future</em></h1>
+      <p class="hero-sub">CS freshman at Ashesi University with a focus on AI and machine learning — building tools that
+        serve African communities, from farmers in Rwanda to students across the continent.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">View Projects
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        <a href="#" class="btn btn-ghost" onclick="return false">Download CV</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat-item">
+          <div class="stat-num">1+</div>
+          <div class="stat-label">Years Learning</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Languages</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3+</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">Who I Am</div>
+        <h2 class="sec-title">About Me</h2>
+      </div>
+      <div class="about-grid reveal">
+        <div>
+          <div class="about-bio">
+            <p>I'm Regis, a Computer Science student at Ashesi University in Ghana, originally from <strong>Ngororero,
+                Western Province, Rwanda</strong>. I'm a MasterCard Foundation Scholar and a graduate of the Aspire
+              Leaders Program, committed to using technology as a force for good across Africa.</p>
+            <p>My mission is to build <strong>AI-powered tools that solve real problems</strong> — from weather
+              prediction models for subsistence farmers in Rwanda to data systems that empower communities across the
+              continent. I believe that the most impactful technology is built close to the people who need it.</p>
+            <p>Beyond code, I serve as CMO and Developer on <strong>Annotate</strong>, a research workspace startup, and
+              co-lead Youths For Change at Ashesi, where we run digital skills training and community outreach programs.
+              I play guitar when the code needs to breathe.</p>
+          </div>
+          <div style="margin-top:48px">
+            <div class="sec-eyebrow" style="margin-bottom:20px">My Journey</div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-year">2022 – 2023</div>
+                <div class="tl-role">Secondary School Graduate</div>
+                <div class="tl-org">Rwanda</div>
+                <div class="tl-desc">Completed secondary education and began exploring programming and technology
+                  independently.</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-year">2024</div>
+                <div class="tl-role">Aspire Leaders Program</div>
+                <div class="tl-org">Cohort 1, 2026</div>
+                <div class="tl-desc">Developed leadership frameworks and community impact skills alongside exceptional
+                  peers from across Africa.</div>
+              </div>
+              <div class="tl-item active">
+                <div class="tl-year">2024 – Present</div>
+                <div class="tl-role">BSc. Computer Science</div>
+                <div class="tl-org">Ashesi University · MasterCard Foundation Scholar</div>
+                <div class="tl-desc">Building foundations in CS while working on real-world projects in data science,
+                  web development, and AI research.</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-year">Future</div>
+                <div class="tl-role">AI/ML Engineer</div>
+                <div class="tl-org">Focused on African challenges</div>
+                <div class="tl-desc">Building crop disease detection, weather prediction, and community intelligence
+                  systems for farmers in my home region.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="about-sidebar-card reveal">
+            <div class="profile-placeholder">Profile Photo</div>
+            <div class="info-row"><span class="info-label">Location</span><span class="info-val">Accra, Ghana</span>
+            </div>
+            <div class="info-row"><span class="info-label">Origin</span><span class="info-val">Rwanda 🇷🇼</span></div>
+            <div class="info-row"><span class="info-label">University</span><span class="info-val">Ashesi
+                University</span></div>
+            <div class="info-row"><span class="info-label">Program</span><span class="info-val">BSc. Computer
+                Science</span></div>
+            <div class="info-row"><span class="info-label">Year</span><span class="info-val">Sophomore (Y2)</span></div>
+            <div class="info-row"><span class="info-label">Focus</span><span class="info-val">AI · ML · Data
+                Science</span></div>
+            <div class="info-row"><span class="info-label">Languages</span><span class="info-val">Kinyarwanda, English,
+                French</span></div>
+          </div>
+          <div
+            style="margin-top:24px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:28px"
+            class="reveal">
+            <div class="sec-eyebrow" style="margin-bottom:16px">Personality</div>
+            <div id="personality-bars"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">Technical Arsenal</div>
+        <h2 class="sec-title">Skills</h2>
+        <p class="sec-desc">A growing toolkit built through coursework, internships, and self-directed learning — all in
+          service of building intelligent systems.</p>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill-cat">
+          <div class="skill-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+            Programming
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Python</span><span>85%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="85" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>JavaScript</span><span>70%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="70" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Java</span><span>60%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="60" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>C</span><span>55%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="55" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>SQL</span><span>65%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="65" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>R</span><span>40%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="40" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="skill-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 013.32-3.97A2.5 2.5 0 019.5 2z" />
+              <path
+                d="M14.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-3.32-3.97A2.5 2.5 0 0014.5 2z" />
+            </svg>
+            AI & Data Science
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Data Analysis</span><span>75%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="75" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Machine Learning</span><span>50%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="50" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Data Visualization</span><span>70%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="70" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>pandas / numpy</span><span>75%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="75" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Deep Learning</span><span>30%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="30" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="skill-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+            </svg>
+            Web Development
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>React</span><span>70%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="70" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>HTML / CSS</span><span>80%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="80" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>FastAPI</span><span>50%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="50" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>PostgreSQL</span><span>45%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="45" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Bootstrap</span><span>65%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-w="65" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <div class="skill-cat-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14" />
+            </svg>
+            Tools & Platforms
+          </div>
+          <div style="display:flex;flex-wrap:wrap;margin-top:4px">
+            <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span>
+            <span class="skill-tag">VS Code</span><span class="skill-tag">Linux</span>
+            <span class="skill-tag">Jupyter</span><span class="skill-tag">React Router</span>
+            <span class="skill-tag">Figma</span><span class="skill-tag">Postman</span>
+            <span class="skill-tag">Excel</span><span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Power BI</span><span class="skill-tag">Firebase</span>
+          </div>
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">
+            <div
+              style="font-size:11px;font-family:var(--font-mono);color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">
+              Currently Learning</div>
+            <span class="skill-tag" style="border-color:var(--border2);color:var(--text2)">Deep Learning</span>
+            <span class="skill-tag" style="border-color:var(--border2);color:var(--text2)">TensorFlow</span>
+            <span class="skill-tag" style="border-color:var(--border2);color:var(--text2)">R (stats)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">What I've Built</div>
+        <h2 class="sec-title">Projects</h2>
+        <p class="sec-desc">From data pipelines to browser extensions — work that solves real problems and pushes my
+          technical limits.</p>
+      </div>
+      <div class="projects-grid reveal">
+        <div class="project-card">
+          <div class="project-img">
+            <svg class="project-img-pattern" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="p1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <circle cx="1" cy="1" r="1" fill="white" />
+                </pattern>
+              </defs>
+              <rect width="400" height="160" fill="url(#p1)" />
+            </svg>
+            <span style="position:relative;font-size:13px;color:var(--text2);letter-spacing:2px">SALES ANALYTICS</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">R</span><span
+                class="project-tag">React</span><span class="project-tag">Data Science</span></div>
+            <div class="project-title">Business Sales Performance Dashboard</div>
+            <div class="project-desc">End-to-end analytics pipeline on the Online Retail Kaggle dataset. Python for
+              preprocessing, R for statistical modeling, React + Recharts for an interactive dashboard. Built during a
+              Data Science internship at Future Interns.</div>
+            <div class="project-links">
+              <a href="#" class="project-link" onclick="return false"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg> GitHub</a>
+              <a href="#" class="project-link" onclick="return false"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg> Live Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">
+            <svg class="project-img-pattern" viewBox="0 0 400 160">
+              <defs>
+                <pattern id="p2" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="15" height="15" fill="none" stroke="white" stroke-width="0.5" />
+                </pattern>
+              </defs>
+              <rect width="400" height="160" fill="url(#p2)" />
+            </svg>
+            <span style="position:relative;font-size:13px;color:var(--text2);letter-spacing:2px">RESEARCH
+              WORKSPACE</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Browser
+                Ext</span><span class="project-tag">Startup</span></div>
+            <div class="project-title">Annotate — Research Companion</div>
+            <div class="project-desc">Co-founding member, CMO, and frontend developer on Annotate — an all-in-one
+              research workspace featuring spatial memory mapping, context recall, and session replay. Targeting
+              students who lose knowledge between sessions.</div>
+            <div class="project-links">
+              <a href="#" class="project-link" onclick="return false"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg> GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">
+            <svg class="project-img-pattern" viewBox="0 0 400 160">
+              <defs>
+                <pattern id="p3" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <circle cx="20" cy="20" r="18" fill="none" stroke="white" stroke-width="0.5" />
+                </pattern>
+              </defs>
+              <rect width="400" height="160" fill="url(#p3)" />
+            </svg>
+            <span style="position:relative;font-size:13px;color:var(--text2);letter-spacing:2px">SPORTS TECH</span>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span class="project-tag">React</span><span
+                class="project-tag">FastAPI</span><span class="project-tag">PostgreSQL</span><span
+                class="project-tag">In Progress</span></div>
+            <div class="project-title">National Team Player Monitoring App</div>
+            <div class="project-desc">A full-stack web application for tracking and monitoring national football players
+              — performance analytics, health data, and team management tools. React frontend, Python/FastAPI backend,
+              PostgreSQL database.</div>
+            <div class="project-links">
+              <a href="#" class="project-link" onclick="return false"><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg> GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">Where I've Contributed</div>
+        <h2 class="sec-title">Experience</h2>
+      </div>
+      <div class="exp-grid reveal">
+        <div class="exp-card">
+          <div class="exp-type">Internship</div>
+          <div class="exp-title">Data Science & Analytics Intern</div>
+          <div class="exp-org">Future Interns — Remote</div>
+          <div class="exp-desc">Built a full business sales performance analytics project using Python for data
+            preprocessing, R for statistical analysis, and React for an interactive dashboard. CIN ID:
+            FIT/MAY26/DS18653.</div>
+          <div class="exp-period">May 2026 – Jun 2026</div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-type">Community Internship</div>
+          <div class="exp-title">Community Track Intern</div>
+          <div class="exp-org">Codetopia Community</div>
+          <div class="exp-desc">Contributing to one of Ghana's leading developer communities — supporting events,
+            content, and developer engagement across the Codetopia ecosystem.</div>
+          <div class="exp-period">Jun 2026 – Present</div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-type">Startup · Leadership</div>
+          <div class="exp-title">CMO & Frontend Developer</div>
+          <div class="exp-org">Annotate Research Workspace</div>
+          <div class="exp-desc">Co-founder responsible for go-to-market strategy, customer research, and React frontend
+            development. Designed the brand identity and led the GTM pitch. Building the browser extension component in
+            JavaScript.</div>
+          <div class="exp-period">2024 – Present</div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-type">Leadership · Community</div>
+          <div class="exp-title">Co-Leader, Youths For Change</div>
+          <div class="exp-org">Ashesi University</div>
+          <div class="exp-desc">Co-leading a student-driven initiative focused on digital skills training for
+            underserved communities and menstrual hygiene education outreach programs across Berekuso.</div>
+          <div class="exp-period">2024 – Present</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">Academic Foundation</div>
+        <h2 class="sec-title">Education</h2>
+      </div>
+      <div class="edu-cards reveal">
+        <div class="edu-card">
+          <div class="edu-degree">BSc. Computer Science · 2024 – 2028</div>
+          <div class="edu-school">Ashesi University</div>
+          <div class="edu-detail" style="color:var(--text2)">Berekuso, Eastern Region, Ghana</div>
+          <div class="edu-detail" style="color:var(--text3);font-size:12px;font-family:var(--font-mono)">MasterCard
+            Foundation Scholar</div>
+          <div class="edu-courses">
+            <div class="courses-label">Relevant Coursework</div>
+            <span class="course-tag">Data Structures</span>
+            <span class="course-tag">Algorithms</span>
+            <span class="course-tag">Calculus</span>
+            <span class="course-tag">Linear Algebra</span>
+            <span class="course-tag">Data Science</span>
+            <span class="course-tag">OOP (Java)</span>
+            <span class="course-tag">Discrete Math</span>
+            <span class="course-tag">Leadership</span>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">Leadership Program · 2026</div>
+          <div class="edu-school">Aspire Leaders Program</div>
+          <div class="edu-detail" style="color:var(--text2)">Cohort 1, 2026</div>
+          <div class="edu-detail" style="color:var(--text3);font-size:12px;font-family:var(--font-mono)">Graduate</div>
+          <div class="edu-courses">
+            <div class="courses-label">Focus Areas</div>
+            <span class="course-tag">Servant Leadership</span>
+            <span class="course-tag">Community Impact</span>
+            <span class="course-tag">Career Development</span>
+            <span class="course-tag">Networking</span>
+            <span class="course-tag">Global Perspective</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section" id="certifications">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">Verified Learning</div>
+        <h2 class="sec-title">Certifications</h2>
+      </div>
+      <div class="cert-stats reveal">
+        <div class="cert-stat">
+          <div class="cert-stat-num">5+</div>
+          <div class="cert-stat-label">Certificates</div>
+        </div>
+        <div class="cert-stat">
+          <div class="cert-stat-num">200+</div>
+          <div class="cert-stat-label">Learning Hours</div>
+        </div>
+        <div class="cert-stat">
+          <div class="cert-stat-num">4+</div>
+          <div class="cert-stat-label">Platforms</div>
+        </div>
+      </div>
+      <div class="cert-grid reveal">
+        <div class="cert-card">
+          <div class="cert-issuer">Future Interns</div>
+          <div class="cert-name">Data Science & Analytics Internship</div>
+          <div class="cert-date">May – Jun 2026 · CIN: FIT/MAY26/DS18653</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-issuer">Aspire Leaders Program</div>
+          <div class="cert-name">Leadership Development — Cohort 1</div>
+          <div class="cert-date">2026</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-issuer">MasterCard Foundation</div>
+          <div class="cert-name">MasterCard Foundation Scholar</div>
+          <div class="cert-date">2024 – 2028</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-issuer">Codetopia</div>
+          <div class="cert-name">Community Internship — Developer Relations</div>
+          <div class="cert-date">Jun 2026 – Present</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKS -->
+    <section class="section" id="books">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">Continuous Learning</div>
+        <h2 class="sec-title">Books & Learning</h2>
+        <p class="sec-desc">Knowledge compounds. Every book is an investment in becoming a better engineer and leader.
+        </p>
+      </div>
+      <div class="books-grid reveal">
+        <div class="book-card">
+          <div class="book-cover">Hands-On Machine Learning</div>
+          <div class="book-info">
+            <div class="book-author">Aurélien Géron</div>
+            <div class="book-stars">★★★★★ · AI/ML</div>
+          </div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover">Clean Code</div>
+          <div class="book-info">
+            <div class="book-author">Robert C. Martin</div>
+            <div class="book-stars">★★★★★ · Engineering</div>
+          </div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover">The Lean Startup</div>
+          <div class="book-info">
+            <div class="book-author">Eric Ries</div>
+            <div class="book-stars">★★★★☆ · Entrepreneurship</div>
+          </div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover">Deep Work</div>
+          <div class="book-info">
+            <div class="book-author">Cal Newport</div>
+            <div class="book-stars">★★★★★ · Productivity</div>
+          </div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover">Atomic Habits</div>
+          <div class="book-info">
+            <div class="book-author">James Clear</div>
+            <div class="book-stars">★★★★★ · Growth</div>
+          </div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover">Long Walk to Freedom</div>
+          <div class="book-info">
+            <div class="book-author">Nelson Mandela</div>
+            <div class="book-stars">★★★★★ · Leadership</div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="margin-top:40px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:32px;max-width:640px"
+        class="reveal">
+        <div class="sec-eyebrow" style="margin-bottom:14px">Learning Philosophy</div>
+        <p style="color:var(--text2);line-height:1.8;font-size:15px">"I build technical solutions to African and global
+          problems using data science and ML, fueled by my passion for learning and helping others. Every skill I
+          acquire is a potential tool in service of something bigger than myself."</p>
+      </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section class="section" id="hobbies">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">Beyond the Screen</div>
+        <h2 class="sec-title">Hobbies & Interests</h2>
+      </div>
+      <div class="hobbies-grid reveal">
+        <div class="hobby-card">
+          <div class="hobby-icon">🎸</div>
+          <div class="hobby-title">Guitar</div>
+          <div class="hobby-desc">Self-taught guitarist who lets music be the counterweight to long coding sessions.
+            Acoustic, fingerstyle, and learning theory slowly.</div>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">🏋️</div>
+          <div class="hobby-title">Strength Training</div>
+          <div class="hobby-desc">Following a structured 3-day split program focused on muscle gain. Discipline in the
+            gym carries over into every technical challenge.</div>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">⚽</div>
+          <div class="hobby-title">Football</div>
+          <div class="hobby-desc">Lifelong love of the beautiful game — as a player and a fan. Teamwork and pressure
+            performance transfer directly to project work.</div>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">📖</div>
+          <div class="hobby-title">Reading</div>
+          <div class="hobby-desc">Across AI, leadership, philosophy, and biography. A book a month keeps the thinking
+            fresh and the perspective wide.</div>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">🔬</div>
+          <div class="hobby-title">AI Research</div>
+          <div class="hobby-desc">Exploring ML applications for African agriculture — crop disease detection and weather
+            prediction models for smallholder farmers.</div>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon">🌍</div>
+          <div class="hobby-title">Community Building</div>
+          <div class="hobby-desc">Co-leading Youths For Change, teaching digital skills, and believing that the most
+            meaningful technology is built with community, not for it.</div>
+        </div>
+      </div>
+      <div class="quotes-grid reveal" style="margin-top:48px">
+        <div class="quote-card">
+          <div class="quote-text">The best way to predict the future is to invent it.</div>
+          <div class="quote-author">— Alan Kay</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-text">Technology is best when it brings people together.</div>
+          <div class="quote-author">— Matt Mullenweg</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-text">Intelligence is the ability to adapt to change.</div>
+          <div class="quote-author">— Stephen Hawking</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-text">Education is the most powerful weapon you can use to change the world.</div>
+          <div class="quote-author">— Nelson Mandela</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="section" id="achievements">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">Milestones</div>
+        <h2 class="sec-title">Achievements</h2>
+      </div>
+      <div class="ach-grid reveal">
+        <div class="ach-card">
+          <div class="ach-cat">Scholarship</div>
+          <div class="ach-title">MasterCard Foundation Scholar</div>
+          <div class="ach-detail">Highly competitive scholarship supporting transformative African leaders pursuing
+            higher education at Ashesi University.</div>
+          <div class="ach-year">2024</div>
+        </div>
+        <div class="ach-card">
+          <div class="ach-cat">Leadership Program</div>
+          <div class="ach-title">Aspire Leaders Program — Cohort 1</div>
+          <div class="ach-detail">Selected for a global leadership development program designed to accelerate Africa's
+            next generation of change-makers.</div>
+          <div class="ach-year">2026</div>
+        </div>
+        <div class="ach-card">
+          <div class="ach-cat">Research</div>
+          <div class="ach-title">National Geographic Externship Applicant</div>
+          <div class="ach-detail">Applied to the Marine & Community Conservation Externship, connecting personal story
+            from Lake Kivu and Rwanda's wetlands to global conservation work.</div>
+          <div class="ach-year">2025</div>
+        </div>
+        <div class="ach-card">
+          <div class="ach-cat">Startup</div>
+          <div class="ach-title">Co-Founder, Annotate</div>
+          <div class="ach-detail">Built and pitched a research workspace startup as a freshman — handling both the CMO
+            and developer roles simultaneously.</div>
+          <div class="ach-year">2024 – Present</div>
+        </div>
+        <div class="ach-card">
+          <div class="ach-cat">Internship</div>
+          <div class="ach-title">Data Science Intern at Future Interns</div>
+          <div class="ach-detail">Completed a data science and analytics internship, delivering a full end-to-end
+            analytics project using Python, R, and React.</div>
+          <div class="ach-year">2026</div>
+        </div>
+        <div class="ach-card">
+          <div class="ach-cat">Community</div>
+          <div class="ach-title">Co-Leader, Youths For Change</div>
+          <div class="ach-detail">Building digital literacy and health education programs for communities around Ashesi
+            University's campus in Berekuso.</div>
+          <div class="ach-year">2024 – Present</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="section" id="blog">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">Thoughts & Insights</div>
+        <h2 class="sec-title">Blog</h2>
+        <p class="sec-desc">Writing as a tool for thinking — on AI, African tech, and the journey of building something
+          from scratch.</p>
+      </div>
+      <div class="blog-grid reveal">
+        <div class="blog-card">
+          <div class="blog-tag">Artificial Intelligence</div>
+          <div class="blog-title">Why Africa Needs Its Own AI Models — Not Just Translations</div>
+          <div class="blog-excerpt">The global AI pipeline was not built with African languages, crops, or climates in
+            mind. Here's why building locally-grounded models is not just idealistic — it's technically necessary.</div>
+          <div class="blog-meta"><span>8 min read</span><span>Coming soon</span></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-tag">Learning</div>
+          <div class="blog-title">From CSV Files to Full Dashboards: My Python → R → React Workflow</div>
+          <div class="blog-excerpt">A practical breakdown of the data science pipeline I used in my internship —
+            cleaning data with pandas, modeling in R, and building a live React dashboard from scratch.</div>
+          <div class="blog-meta"><span>6 min read</span><span>Coming soon</span></div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-tag">Leadership</div>
+          <div class="blog-title">What Running a Club Taught Me About Shipping Software</div>
+          <div class="blog-excerpt">Co-leading Youths For Change and building Annotate simultaneously taught me that the
+            hardest part of any project is the same: keeping people aligned when the path isn't clear.</div>
+          <div class="blog-meta"><span>5 min read</span><span>Coming soon</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="sec-header reveal">
+        <div class="sec-eyebrow">Let's Connect</div>
+        <h2 class="sec-title">Contact</h2>
+      </div>
+      <div class="contact-grid reveal">
+        <div>
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-input" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-input" placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-input" placeholder="What's this about?">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-textarea" placeholder="Tell me what's on your mind..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send Message
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+            <div id="form-msg"
+              style="display:none;font-size:13px;color:var(--text2);font-family:var(--font-mono);margin-top:8px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:6px">
+            </div>
+          </form>
+        </div>
+        <div class="contact-info">
+          <div class="status-badge">
+            <div class="status-dot"></div>Available for opportunities
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Email</div>
+              <div class="contact-info-val">regis@ashesi.edu.gh</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Location</div>
+              <div class="contact-info-val">Accra, Ghana · Kigali, Rwanda</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z" />
+              </svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Discord</div>
+              <div class="contact-info-val">Available on request</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:24px">
+            <a href="#" onclick="return false" class="btn btn-ghost" style="font-size:12px;padding:10px 16px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="#" onclick="return false" class="btn btn-ghost" style="font-size:12px;padding:10px 16px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      style="border-top:1px solid var(--border);padding:32px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap">
+      <div style="font-family:var(--font-mono);font-size:11px;color:var(--text3)">© 2026 Regis · Ashesi University ·
+        Rwanda 🇷🇼</div>
+      <div style="font-family:var(--font-mono);font-size:11px;color:var(--text3)">Built with curiosity and intention
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Neural Canvas
+    const canvas = document.getElementById('neural-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, nodes = [], animId;
+    const NODE_COUNT = 60;
+
+    function resizeCanvas() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function initNodes() {
+      nodes = [];
+      for (let i = 0; i < NODE_COUNT; i++) {
+        nodes.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+          r: Math.random() * 1.5 + 0.5, pulse: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    function drawNeural() {
+      ctx.clearRect(0, 0, W, H);
+      const t = Date.now() * 0.001;
+
+      nodes.forEach(n => {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > W) n.vx *= -1;
+        if (n.y < 0 || n.y > H) n.vy *= -1;
+        n.pulse += 0.02;
+      });
+
+      // Draw connections
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(255,255,255,${(1 - d / 120) * 0.12})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      // Draw nodes
+      nodes.forEach(n => {
+        const pulse = 0.7 + Math.sin(n.pulse) * 0.3;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${pulse * 0.4})`;
+        ctx.fill();
+      });
+
+      animId = requestAnimationFrame(drawNeural);
+    }
+
+    resizeCanvas(); initNodes(); drawNeural();
+    window.addEventListener('resize', () => { resizeCanvas(); initNodes() });
+
+    // Reduce motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      cancelAnimationFrame(animId);
+      canvas.style.display = 'none';
+    }
+
+    // Sidebar active state + scroll spy
+    const sections = document.querySelectorAll('.section');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    function updateActive() {
+      let current = '';
+      sections.forEach(s => {
+        const top = s.offsetTop - 100;
+        if (window.scrollY >= top) current = s.id;
+      });
+      navItems.forEach(n => {
+        n.classList.toggle('active', n.getAttribute('href') === '#' + current);
+      });
+    }
+
+    window.addEventListener('scroll', updateActive, { passive: true });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(r => observer.observe(r));
+
+    // Animate skill bars when visible
+    const barObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+            setTimeout(() => { bar.style.width = bar.dataset.w + '%' }, 200);
+          });
+          barObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.skill-cat').forEach(c => barObserver.observe(c));
+
+    // Personality bars
+    const traits = [
+      { label: 'Curiosity', val: 95 }, { label: 'Discipline', val: 88 },
+      { label: 'Creativity', val: 80 }, { label: 'Adaptability', val: 85 }, { label: 'Teamwork', val: 90 }
+    ];
+    const pbContainer = document.getElementById('personality-bars');
+    if (pbContainer) {
+      pbContainer.innerHTML = traits.map(t => `
+    <div style="margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;color:var(--text2)">
+        <span>${t.label}</span><span style="color:var(--text3);font-family:var(--font-mono)">${t.val}%</span>
+      </div>
+      <div style="height:2px;background:var(--border2);border-radius:2px">
+        <div style="height:100%;background:var(--text);border-radius:2px;width:0%;transition:width 1.2s cubic-bezier(0.16,1,0.3,1)" data-pw="${t.val}"></div>
+      </div>
+    </div>
+  `).join('');
+      const pbObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.querySelectorAll('[data-pw]').forEach(b => {
+              setTimeout(() => { b.style.width = b.dataset.pw + '%' }, 300);
+            });
+            pbObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      pbObs.observe(pbContainer);
+    }
+
+    // Mobile sidebar
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+    function closeSidebar() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('overlay').classList.remove('show');
+    }
+
+    // Contact form
+    function handleSubmit(e) {
+      e.preventDefault();
+      const msg = document.getElementById('form-msg');
+      msg.style.display = 'block';
+      msg.textContent = '✓ Message received — I\'ll get back to you soon.';
+    }
+  </script>
+</body>
+
+</html>
