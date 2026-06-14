@@ -912,7 +912,7 @@
     } */
 
     /* CONTACT */
-    .contact-grid {
+    /* .contact-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 56px;
@@ -1040,7 +1040,7 @@
             opacity: 0.5;
             transform: scale(0.8)
         }
-    }
+    } */
 
     /* SCROLLBAR */
     ::-webkit-scrollbar {
