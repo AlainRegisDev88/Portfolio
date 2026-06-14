@@ -82,7 +82,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                     </svg>Contact
                 </a>
             </nav>
-            <div className="sidebar-footer">Ashesi University · 2024–2028</div>
+            <div className="sidebar-footer">Ashesi University · C29</div>
         </aside>
     );
 }
