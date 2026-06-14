@@ -1,11 +1,12 @@
-    MAIN
     /* Ensure main is offset by the sidebar on desktop */
     .main {
         margin-left: var(--sidebar) !important;
-        width: calc(100% - var(--sidebar));
+        width: calc(100% - var(--sidebar)) !important;
         position: relative;
         z-index: 1;
         min-height: 100vh;
+        flex: 0 0 auto !important;
+        box-sizing: border-box !important;
     }
 
     /* SECTIONS */
