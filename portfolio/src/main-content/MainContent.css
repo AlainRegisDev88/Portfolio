@@ -551,7 +551,7 @@
     } */
 
     /* EDUCATION */
-    .edu-cards {
+    /* .edu-cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 24px
@@ -612,10 +612,10 @@
         color: var(--text2);
         margin: 3px;
         font-family: var(--font-mono)
-    }
+    } */
 
     /* CERTIFICATIONS */
-    .cert-grid {
+    /* .cert-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px
@@ -684,10 +684,10 @@
         letter-spacing: 2px;
         text-transform: uppercase;
         font-family: var(--font-mono)
-    }
+    } */
 
     /* BOOKS */
-    .books-grid {
+    /* .books-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 20px
@@ -738,7 +738,7 @@
     .book-stars {
         font-size: 10px;
         color: var(--text3)
-    }
+    } */
 
     /* HOBBIES */
     .hobbies-grid {
