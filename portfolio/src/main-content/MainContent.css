@@ -502,7 +502,7 @@
     } */
 
     /* EXPERIENCE */
-    .exp-grid {
+    /* .exp-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 24px
@@ -548,7 +548,7 @@
         font-size: 11px;
         color: var(--text3);
         margin-top: 14px
-    }
+    } */
 
     /* EDUCATION */
     .edu-cards {
