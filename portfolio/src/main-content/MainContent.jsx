@@ -12,6 +12,7 @@ import HobbiesSection from './hobbies-section/HobbiesSection'
 import AchievementsSection from './achievements-section/AchievementsSection'
 import BlogSection from './blog-section/BlogSection'
 import ContactSection from './contact-section/ContactSection'
+import Footer from '../footer/Footer'
 
 const personalityTraits = [
     { label: 'Curiosity', val: 95 },
@@ -247,6 +248,7 @@ const MainContent = ({ sidebarOpen, toggleSidebar, closeSidebar }) => {
 
                 {/* <!-- ACHIEVEMENTS --> */}
                 <AchievementsSection />
+                
                 {/* <!-- BLOG --> */}
                 <BlogSection />
 
@@ -257,14 +259,7 @@ const MainContent = ({ sidebarOpen, toggleSidebar, closeSidebar }) => {
                 />
 
                 {/* <!-- FOOTER --> */}
-                <footer
-                    style={{ borderTop: '1px solid var(--border)', padding: '32px 64px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text3)' }}>© 2026 Regis · Ashesi University ·
-                        Rwanda 🇷🇼</div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text3)' }}>Built with curiosity and intention
-                    </div>
-                </footer>
-
+                <Footer />
             </main>
         </>
 
