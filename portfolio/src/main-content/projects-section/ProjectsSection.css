@@ -1,0 +1,103 @@
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 24px
+    }
+
+    .project-card {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: border-color 0.3s, transform 0.3s var(--ease);
+        cursor: pointer;
+    }
+
+    .project-card:hover {
+        border-color: var(--border2);
+        transform: translateY(-4px)
+    }
+
+    .project-img {
+        height: 160px;
+        background: var(--surface3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        color: var(--text3);
+        letter-spacing: 2px;
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project-img-pattern {
+        position: absolute;
+        inset: 0;
+        opacity: 0.3
+    }
+
+    .project-body {
+        padding: 24px
+    }
+
+    .project-tags {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 14px
+    }
+
+    .project-tag {
+        font-size: 10px;
+        font-family: var(--font-mono);
+        color: var(--text3);
+        padding: 3px 8px;
+        background: var(--surface3);
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        letter-spacing: 1px;
+        text-transform: uppercase
+    }
+
+    .project-title {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px
+    }
+
+    .project-desc {
+        font-size: 13px;
+        color: var(--text2);
+        line-height: 1.65;
+        margin-bottom: 20px
+    }
+
+    .project-links {
+        display: flex;
+        gap: 12px
+    }
+
+    .project-link {
+        font-size: 12px;
+        color: var(--text3);
+        text-decoration: none;
+        font-family: var(--font-mono);
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.2s
+    }
+
+    .project-link:hover {
+        color: var(--text)
+    }
+
+    .project-link svg {
+        width: 12px;
+        height: 12px
+    }

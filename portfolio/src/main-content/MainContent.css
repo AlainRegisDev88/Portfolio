@@ -21,7 +21,7 @@
     }
 
     /* HERO */
-    #home {
+    /* #home {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -143,7 +143,7 @@
         text-transform: uppercase;
         margin-top: 2px;
         font-family: var(--font-mono)
-    }
+    } */
 
     /* SECTION HEADERS */
     .sec-header {
@@ -185,7 +185,7 @@
     }
 
     /* ABOUT */
-    .about-grid {
+    /* .about-grid {
         display: grid;
         grid-template-columns: 1fr 340px;
         gap: 64px;
@@ -254,10 +254,10 @@
 
     .info-val {
         color: var(--text2)
-    }
+    } */
 
     /* TIMELINE */
-    .timeline {
+    /* .timeline {
         margin-top: 40px;
         position: relative
     }
@@ -320,10 +320,10 @@
         font-size: 14px;
         color: var(--text2);
         line-height: 1.7
-    }
+    } */
 
     /* SKILLS */
-    .skills-grid {
+    /* .skills-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 24px
@@ -394,10 +394,10 @@
         color: var(--text2);
         margin: 4px;
         font-family: var(--font-mono)
-    }
+    } */
 
     /* PROJECTS */
-    .projects-grid {
+    /* .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
         gap: 24px
@@ -499,7 +499,7 @@
     .project-link svg {
         width: 12px;
         height: 12px
-    }
+    } */
 
     /* EXPERIENCE */
     .exp-grid {
