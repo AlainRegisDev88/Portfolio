@@ -817,7 +817,7 @@
     } */
 
     /* ACHIEVEMENTS */
-    .ach-grid {
+    /* .ach-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 20px
@@ -856,7 +856,7 @@
         color: var(--text3);
         font-family: var(--font-mono);
         margin-top: 10px
-    }
+    } */
 
     /* BLOG */
     .blog-grid {

@@ -1,0 +1,40 @@
+    .ach-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px
+    }
+
+    .ach-card {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 24px
+    }
+
+    .ach-cat {
+        font-size: 10px;
+        font-family: var(--font-mono);
+        color: var(--text3);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 10px
+    }
+
+    .ach-title {
+        font-family: var(--font-display);
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 6px
+    }
+
+    .ach-detail {
+        font-size: 13px;
+        color: var(--text2)
+    }
+
+    .ach-year {
+        font-size: 11px;
+        color: var(--text3);
+        font-family: var(--font-mono);
+        margin-top: 10px
+    }
